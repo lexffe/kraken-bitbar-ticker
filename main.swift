@@ -57,9 +57,9 @@ queue.async {
                 let c = tickerValue.lastClosed[0]
                 let end = c.index(c.endIndex, offsetBy: -3)
                 print("\(Currencies[String(tickerKey.prefix(4))]!)-\(Currencies[String(tickerKey.suffix(4))]!): \(c[c.startIndex..<end])")
-                semaphore.signal()
             }
         }
+        semaphore.signal()
     }.resume()
 }
 
